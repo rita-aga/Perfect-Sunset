@@ -12,7 +12,7 @@ class Locator extends React.Component {
       {this.props.town && <p className="location"><FontAwesomeIcon icon={faLocationArrow} /> {this.props.town}</p>}
       <form onSubmit={this.props.getWeather}>
         <input type="text" className="myinput" placeholder="ZIP code..." name="zipcode" autocomplete="off"/>
-        <button className="btn"><FontAwesomeIcon icon={faSearch} /></button>
+        <button type="button" className="btn"><FontAwesomeIcon icon={faSearch} /></button>
         <span className="underline"></span>
       </form>
     
