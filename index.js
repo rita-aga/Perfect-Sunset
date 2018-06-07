@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 })
 
 io.origins('*:*');
-io.set('transports', ['websocket']);
+// io.set('transports', ['websocket']);
 
 // Open port for socket communication
 server.listen(process.env.PORT || 3000);
