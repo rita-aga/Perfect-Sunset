@@ -1,31 +1,23 @@
 {
   "name": "perfect-sunset",
   "version": "1.0.0",
-  "description": "Weather App",
-  "engines": {
-    "node": "8.9.x"
-  },
+  "description": "App to find coffee shops nearby",
+  "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node index.js",
+    "dev": "nodemon server.js"
   },
-  "cacheDirectories": [
-    "node_modules",
-    "react-ui/node_modules"
-  ],
+  "author": "Rita Agafonova",
+  "license": "ICS",
   "dependencies": {
-    "express": "^4.14.1"
+    "axios": "^0.18.0",
+    "dark-sky-api": "^0.6.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "path": "^0.12.7",
+    "socket.io": "2.0.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rita-aga/Perfect-Sunset.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "create-react-app",
-    "react"
-  ],
-  "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
 }
