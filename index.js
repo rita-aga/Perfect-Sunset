@@ -16,11 +16,11 @@ app.get('/', function (req, res) {
 })
 
 io.origins('*:*');
-io.set('transports', ['websocket']);
+// io.set('transports', ['websocket']);
 
 // Open port for socket communication
-server.listen(process.env.PORT || 3000);
-console.log(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3002);
+console.log(process.env.PORT || 3002);
 console.log(process.env.REACT_APP_DARKSKY_API);
 console.log(process.env.REACT_APP_GOOGLE_API);
 
