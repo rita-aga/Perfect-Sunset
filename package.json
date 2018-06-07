@@ -1,31 +1,31 @@
 {
-  "name": "perfect-sunset",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free-solid": "^5.0.13",
-    "@fortawesome/react-fontawesome": "0.0.20",
-    "ajv": "^6.5.0",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.1.1",
-    "dark-sky-api": "^0.6.3",
-    "express": "^4.16.3",
-    "jquery": "^3.3.1",
-    "moment": "^2.22.2",
-    "node": "^10.0.0",
-    "popper": "^1.0.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-moment": "^0.7.0",
-    "react-scripts": "1.1.4",
-    "socket.io": "^2.1.0",
-    "socket.io-client": "^2.1.0"
+  "name": "heroku-cra-node",
+  "version": "1.0.0",
+  "description": "How to use create-react-app with a custom Node API on Heroku",
+  "engines": {
+    "node": "8.9.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mars/heroku-cra-node.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
 }
