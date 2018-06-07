@@ -4,8 +4,8 @@
 .env
 
 # dependencies
-/react-ui/node_modules
-/server/node_modules
+react-ui/node_modules/
+server/node_modules/
 
 # testing
 /coverage
@@ -14,7 +14,7 @@
 /build
 
 # misc
-/heroku-cra-node
+heroku-cra-node/
 .DS_Store
 .env.local
 .env.development.local
