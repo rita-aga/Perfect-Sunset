@@ -4,7 +4,7 @@
   "description": "App to find coffee shops nearby",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "dev": "nodemon server.js"
   },
