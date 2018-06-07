@@ -42,7 +42,7 @@ class App extends Component {
   getWeather = (e) => {
     e.preventDefault();
     console.log(e.target.elements.zipcode.value);
-    const socket = io.connect('http://localhost:3002');
+    const socket = io.connect('https://localhost:3002');
     const zip = e.target.elements.zipcode.value;
     socket.emit('zip', zip);
     socket.on('darkSkyCurrentUpdate', (data) => {
