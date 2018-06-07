@@ -15,6 +15,8 @@ app.get('/', function (req, res) {
   res.send('Yay! App is working!')
 })
 
+io.origins('*:*');
+
 // Open port for socket communication
 server.listen(process.env.PORT || 3002);
 console.log(process.env.REACT_APP_DARKSKY_API);
