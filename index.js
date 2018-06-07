@@ -1,10 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const http = require('http');
+const https = require('https');
 const path = require('path');
 const DarkSkyApi = require('dark-sky-api');
-const server = http.createServer(app);
+const server = https.createServer(app);
 const io = require('socket.io')(server);
 const axios = require('axios');
 
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 io.origins('*:*');
 
 // Open port for socket communication
-server.listen(process.env.PORT || 3002);
+server.listen(3002);
 console.log(process.env.REACT_APP_DARKSKY_API);
 console.log(process.env.REACT_APP_GOOGLE_API);
 
