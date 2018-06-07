@@ -74,7 +74,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    const socket = io.connect('http://localhost:3002');
+    const socket = io.connect('https://perfect-sunset.herokuapp.com:3002', { transport : ['websocket'] });
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
