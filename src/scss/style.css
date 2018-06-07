@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700");
+body {
+  font-family: 'Hind', sans-serif;
+  color: white;
+}
+
+#mainwrapper {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: auto;
+  box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+#title {
+  width: 60%;
+}
+
+#root {
+  width: 40%;
+  padding: 1em;
+  background: linear-gradient(180deg, #B65EBA, #7BF2E9);
+  background-attachment: fixed;
+  font-family: 'Hind', sans-serif;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 5em;
+  padding: 0em 1em;
+  line-height: 0.5;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+.footer img {
+  height: 3em;
+}
+
+form {
+  width: 100%;
+}
+
+.myinput {
+  color: white;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0.5em;
+  width: 80%;
+  text-align: center;
+  font-size: 2em;
+}
+
+.myinput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.underline {
+  position: relative;
+  display: block;
+}
+
+.underline:before,
+.underline:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: white;
+  transition: 0.2s ease all;
+}
+
+.underline:before {
+  left: 50%;
+}
+
+.underline:after {
+  right: 50%;
+}
+
+.myinput:focus {
+  border-color: transparent;
+}
+
+.myinput:focus ~ .underline:before,
+.myinput:focus ~ .underline:after {
+  width: 50%;
+}
+
+.btn {
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.location {
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.currentCard {
+  background: linear-gradient(to right bottom, #FFCF1B, #FF881B);
+  border-radius: 0.5em;
+  padding: 1.7em;
+  margin-top: 70px;
+  height: 330px;
+}
+
+.currentCard .temp {
+  font-size: 9em;
+  text-align: right;
+  position: relative;
+  line-height: 0;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.currentCard .icon {
+  position: relative;
+  margin-bottom: 1.8em;
+}
+
+.currentCard .icon img {
+  width: 5em;
+  max-height: 4em;
+}
+
+.currentCard .stat {
+  font-size: 2em;
+  line-height: 0.5;
+  position: relative;
+}
+
+.currentCard .stat img {
+  height: 1em;
+}
+
+@keyframes expandWidth {
+  0% {
+    width: 0;
+  }
+}
+
+.statBar {
+  position: relative;
+  margin-left: 1em;
+  display: inline-block;
+  height: 6px;
+  border-radius: 2px;
+  background-color: white;
+  animation: expandWidth 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.count {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 4em;
+}
+
+.count img {
+  height: 1.5em;
+  margin-right: 0.2em;
+}
+
+.open {
+  background: linear-gradient(to right bottom, #FFCDA5, #EE4D5F);
+  border-radius: 0.5em;
+  padding: 1.2em;
+  margin-top: 3em;
+  height: 410px;
+  transition: 0.5s ease all;
+}
+
+.open .precip, .open .wind, .open .cloud, .open .humid, .open .sunrise, .open .sunset {
+  display: inherit;
+}
+
+.open .icon {
+  position: relative;
+  top: -180px;
+  margin-bottom: 1.8em;
+}
+
+.open .icon img {
+  width: 5em;
+  max-height: 4em;
+  opacity: 0.5;
+}
+
+.open .sunset, .open .sunrise {
+  position: relative;
+  top: 10px;
+  font-size: 1.3em;
+  line-height: 0;
+  opacity: 0.7;
+}
+
+.open .sunset img, .open .sunrise img {
+  height: 1.3em;
+  margin-right: 0.5em;
+}
+
+.open .sunset {
+  margin-top: -0.5em;
+}
+
+.open .temphigh {
+  font-size: 9em;
+  text-align: right;
+  position: relative;
+  top: -150px;
+  line-height: 0;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.open .templow {
+  font-size: 1.5em;
+  text-align: right;
+  position: relative;
+  top: -150px;
+  line-height: 0;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.open .date {
+  font-size: 4em;
+  position: relative;
+  top: 70px;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 0.8;
+}
+
+.open .weekday {
+  font-size: 2.2em;
+  position: relative;
+  top: 70px;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.open .stat {
+  font-size: 2em;
+  line-height: 0.5;
+  position: relative;
+  top: -100px;
+}
+
+.open .stat img {
+  height: 1em;
+}
+
+.closed {
+  background: linear-gradient(to right bottom, #FF9897, #F650A0);
+  border-radius: 0.5em;
+  padding: 1.2em;
+  margin-top: 1em;
+  height: 120px;
+  transition: 0.5s ease all;
+}
+
+.closed .precip, .closed .wind, .closed .cloud, .closed .humid, .closed .sunrise, .closed .sunset {
+  display: none;
+}
+
+.closed .date {
+  font-size: 4em;
+  position: relative;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 0.8;
+}
+
+.closed .weekday {
+  font-size: 2.2em;
+  position: relative;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.closed .temphigh {
+  position: relative;
+  top: -1.5em;
+  line-height: 0.4;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.closed .templow {
+  position: relative;
+  top: -1.5em;
+  line-height: 0.5;
+  font-size: 2.5em;
+}
+
+.closed .icon {
+  position: relative;
+  top: -120px;
+  margin-left: 5em;
+  line-height: 0.4;
+}
+
+.closed .icon img {
+  width: 5em;
+  max-height: 4em;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1200px) {
+  #mainwrapper {
+    width: 55%;
+  }
+  #root {
+    width: 100%;
+  }
+  #title {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mainwrapper {
+    width: 75%;
+  }
+  #root {
+    width: 100%;
+  }
+  #title {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #mainwrapper, #root {
+    width: 100%;
+  }
+  #title {
+    width: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
