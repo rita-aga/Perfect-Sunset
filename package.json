@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
     "dev": "nodemon server.js"
   },
   "author": "Rita Agafonova",
