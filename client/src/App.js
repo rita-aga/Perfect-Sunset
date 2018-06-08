@@ -78,54 +78,49 @@ class App extends Component {
     const socket = io('https://perfect-sunset.herokuapp.com', {
     path: '/socket.io-client', transports: ['websocket'] });
 
-    {navigator.geolocation && navigator.geolocation.getCurrentPosition(
-      (position) => {
-        let lat = position.coords.latitude
-        let lng = position.coords.longitude
-        console.log("getCurrentPosition Success " + lat + lng) // logs position correctly
-        this.setState({
-          location: {
-            latitude: lat,
-            longitude: lng
-          }
-        })
-        
-        // Send coordinates
-        socket.emit('coords', this.state.location);
-        // Receive API data
-        socket.on('darkSkyCurrent', (data) => {
-          this.setState({
-            currently: data
-          })
-          console.log(this.state.currently);
-        });
-        socket.on('darkSkyForecast', (data) => {
-          this.setState({
-            forecast:  data
-          })
-          console.log(this.state.forecast);
-        });
-        socket.on('userAddress', (data) => {
-          this.setState({
-            town:  data
-          })
-          console.log(this.state.town);
-        });
-      },
-      (error) => {
-        alert('geolocation error');
-        this.setState({
-          geoLocatorStatus:  'You geolocation is OFF. Please, use ZIP code.'
-        })
-        console.error(JSON.stringify(error))
-      }, {
-        enableHighAccuracy: true,
-        timeout: 20000,
-        maximumAge: Infinity
-      }
-    )
-  }
+  let geoSuccess = (position) => {
+  let lat = position.coords.latitude
+  let lng = position.coords.longitude
+  console.log("getCurrentPosition Success " + lat + lng) // logs position correctly
+  this.setState({
+    location: {
+      latitude: lat,
+      longitude: lng
+    }
+  })
+  
+  // Send coordinates
+  socket.emit('coords', this.state.location);
+  // Receive API data
+  socket.on('darkSkyCurrent', (data) => {
+    this.setState({
+      currently: data
+    })
+    console.log(this.state.currently);
+  });
+  socket.on('darkSkyForecast', (data) => {
+    this.setState({
+      forecast:  data
+    })
+    console.log(this.state.forecast);
+  });
+  socket.on('userAddress', (data) => {
+    this.setState({
+      town:  data
+    })
+    console.log(this.state.town);
+  });
+}
 
+  let geoError = (error) => {
+  alert('geolocation error');
+  this.setState({
+    geoLocatorStatus:  'You geolocation is OFF. Please, use ZIP code.'
+  })
+  console.error(JSON.stringify(error))
+}
+    {navigator.geolocation && navigator.geolocation.getCurrentPosition(geoSuccess, geoError)
+  }
   }
 
   render() {
