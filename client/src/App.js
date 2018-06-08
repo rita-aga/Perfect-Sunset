@@ -113,6 +113,7 @@ class App extends Component {
         });
       },
       (error) => {
+        alert('geolocation error');
         this.setState({
           geoLocatorStatus:  'You geolocation is OFF. Please, use ZIP code.'
         })
@@ -120,7 +121,7 @@ class App extends Component {
       }, {
         enableHighAccuracy: true,
         timeout: 20000,
-        maximumAge: 1000
+        maximumAge: Infinity
       }
     )
   }
