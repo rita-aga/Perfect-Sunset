@@ -42,8 +42,7 @@ class App extends Component {
   getWeather = (e) => {
     e.preventDefault();
     console.log(e.target.elements.zipcode.value);
-    const socket = io('perfect-sunset.herokuapp.com', {
-    path: '/socket.io-client' { transports: ['websocket'] });
+    const socket = io('https://perfect-sunset.herokuapp.com', { transports: ['websocket'] });
     const zip = e.target.elements.zipcode.value;
     socket.emit('zip', zip);
     socket.on('darkSkyCurrentUpdate', (data) => {
@@ -75,8 +74,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    const socket = io('perfect-sunset.herokuapp.com', {
-    path: '/socket.io-client' { transports: ['websocket'] });
+    const socket = io('https://perfect-sunset.herokuapp.com', { transports: ['websocket'] });
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
