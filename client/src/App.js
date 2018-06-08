@@ -78,7 +78,7 @@ class App extends Component {
     const socket = io('https://perfect-sunset.herokuapp.com', {
     path: '/socket.io-client', transports: ['websocket'] });
 
-    navigator.geolocation.getCurrentPosition(
+    {navigator.geolocation && navigator.geolocation.getCurrentPosition(
       (position) => {
         let lat = position.coords.latitude
         let lng = position.coords.longitude
@@ -123,7 +123,7 @@ class App extends Component {
         maximumAge: 1000
       }
     )
-
+  }
 
   }
 
