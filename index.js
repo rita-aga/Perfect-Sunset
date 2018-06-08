@@ -1,12 +1,20 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
+// const app = express();
 const http = require('http');
 const path = require('path');
 const DarkSkyApi = require('dark-sky-api');
-const server = http.createServer(app);
-const io = require('socket.io')(server);
+// const server = http.createServer(app);
+// const io = require('socket.io')(server);
 const axios = require('axios');
+
+const app = express();
+const server = require('http').createServer(app);
+
+const io = require('socket.io')(server, {
+  path: '/socket.io-client'
+});
+io.set('transports', ['websocket']);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -16,7 +24,7 @@ app.get('/', function (req, res) {
 })
 
 io.origins('*:*');
-io.set('transports', ['websocket']);
+// io.set('transports', ['websocket']);
 
 // Open port for socket communication
 server.listen(process.env.PORT || 3000);
