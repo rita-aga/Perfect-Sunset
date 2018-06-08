@@ -38,7 +38,7 @@ class App extends Component {
     zipStatus: undefined,
     geoLocatorStatus: undefined
   }
-
+  
   getWeather = (e) => {
     e.preventDefault();
     console.log(e.target.elements.zipcode.value);
@@ -135,7 +135,7 @@ class App extends Component {
         getWeather={this.getWeather} 
         error={this.state.zipStatus} 
         geo={this.state.geoLocatorStatus}/>
-        {/* <Countdown target={this.state.forecast.daily.data[0].sunsetDateTime}/> */}
+        {/* <Countdown target={this.state.forecast.daily.data[0].sunsetDateTime} timeRemainingInSeconds={9480}/> */}
         <Current
         temp={this.state.currently.temperature}
         humidity={this.state.currently.humidity}
